@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/index.css">
+  <title>Products</title>
+</head>
+
+<body>
+  <!-- navbar starting -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container">
+      
+      <a href="index.html" class="navbar-brand"> THE BRAND COMPANY</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarId">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarId">
+        <ul class="navbar-nav text-center ml-auto">
+          <li class="nav-item">
+            <a href="index.html" class="nav-link"> Home </a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link"> About </a>
+          </li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link"> Services </a>
+          </li>
+          <li class="nav-item">
+            <a href="products.html" class="nav-link"> Products </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link"> Contact </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar ends -->
+
+    <!-- Your content goes here -->
+ <!-- Section Gallary Start -->
+ <section class="gallary" id="gallary">
+  <div
+    class="container text-center"
+    data-aos="fade-in"
+    data-aos-duration="7000"
+  >
+    <div class="main-txt">
+      <h1><span style="color: black;">Composing Premium Brands</span></h1>
+    </div>
+
+    <div class="row text-center" style="margin-top: 30px">
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img
+            src="../public/images/tm.jpg"
+            alt="loading"
+            height="250px"
+          />
+        </div>
+      </div>
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img
+            src="../public/images/BIBS-Logo-white.webp"
+            alt="loading"
+            height="250px"
+          />
+        </div>
+      </div>
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img
+            src="../public/images/graco 2.gif"
+            alt="loading"
+            height="250px"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 30px">
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img
+            src="../public/images/nobis 2.jpg"
+            alt="loading"
+            height="250px"
+          />
+        </div>
+      </div>
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img
+            src="../PUBLIC/images/polo.jpg"
+            alt="loading"
+            height="250px"
+          />
+        </div>
+      </div>
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img
+            src="../public/images/dr browns.png"
+            alt="loading"
+            height="250px"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 30px">
+      <div class="col-md-4 py-3 py-md-0">
+        <div class="card">
+          <img
+            src="../public/images/thermos.png"
+            alt="loading"
+            height="250px"
+          />
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+
+  
+</section>
+<!-- Section Gallary End -->
+
+
+
+
+
+  <footer id="footer">
+   
+    <h3>THE BRAND COMPANY</h3>
+    <p>Distributing products across Pakistan</p>
+   
+    <div class="credit">
+      <p>Designed By THE BRAND COMPANY</p>
+    </div>
+    <div class="copyright">
+      <p>&copy;Copyright ST. All Rights Reserved</p>
+    </div>
+  </footer>
+
+
+
+
+  <script>
+    var dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(function (dropdown) {
+      var dropdownMenu = dropdown.querySelector('.dropdown-menu');
+      var button = dropdown.querySelector('.filter');
+      dropdown.addEventListener('click', function (event) {
+        event.stopPropagation();
+        closeDropdowns();
+        dropdownMenu.classList.toggle('show');
+      });
+      button.addEventListener('click', function (event) {
+        event.preventDefault();
+      });
+    });
+
+    function closeDropdowns() {
+      var dropdownMenus = document.querySelectorAll('.dropdown-menu');
+      dropdownMenus.forEach(function (dropdownMenu) {
+        dropdownMenu.classList.remove('show');
+      });
+    }
+
+    window.addEventListener('click', function (event) {
+      closeDropdowns();
+    });
+
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(function () {
+      var selectedClass = "";
+      $(".filter").click(function () {
+        selectedClass = $(this).attr("data-rel");
+        $("#gallery").fadeTo(100, 0.1);
+        $("#gallery div").not("." + selectedClass).fadeOut().removeClass('animation');
+        setTimeout(function () {
+          $("." + selectedClass).fadeIn().addClass('animation');
+          $("#gallery").fadeTo(300, 1);
+        }, 300);
+      });
+    });
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
